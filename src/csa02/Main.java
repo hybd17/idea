@@ -270,7 +270,6 @@ public class Main {
             return dp[m-1][n-1];
         }
         public String longestCommonPrefix(String[] strs){
-            String ants = "";
             if(strs==null){
                 return "";
             }
@@ -286,7 +285,7 @@ public class Main {
                     }
                 }
             }
-            return ants;
+            return strs[0];
         }
     }
 }

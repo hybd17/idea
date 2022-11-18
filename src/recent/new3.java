@@ -1,3 +1,5 @@
+package recent;
+
 import java.util.Scanner;
 
 public class new3 {

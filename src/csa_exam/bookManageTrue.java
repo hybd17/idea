@@ -16,8 +16,9 @@ public class bookManageTrue {
             System.out.println("2.增加书籍");
             System.out.println("3.删除图书");
             System.out.println("4.归还图书");
+            System.out.println("5.退出系统");
             System.out.println("-----------------------------");
-            System.out.println("请选择您的服务项目1-4:");
+            System.out.println("请选择您的服务项目1-5:");
             int select = in.nextInt();
             switch (select){
                 case 1:
@@ -32,6 +33,8 @@ public class bookManageTrue {
                 case 4:
                     returnBooks();
                     break;
+                case 5:
+                    return;
                 default:
                     System.out.println("您所选的服务不在列表内呢，请您重新选择");
             }

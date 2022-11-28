@@ -28,27 +28,32 @@ public class BookManageOperation {
         return true;
     }
     public boolean deleteBook(String id){
+        boolean isprime = true;
         for (int i = 0; i <books.size(); i++) {
             Books bookTemp=books.get(i);
             if(bookTemp.getId().equals(id)){
                 books.remove(i);
+                isprime = false;
                 System.out.println("删除成功");
-            }else{
-                System.err.println("没有找到您要删除的图书编号！");
-                return true;
             }
+        }
+        if(isprime==true){
+            System.err.println("没有找到您要删除的图书编号!");
         }
         return false;
     }
     public boolean returnBooks(String id){
+        boolean isprime = true;
         for (int i = 0; i <books.size(); i++) {
             Books bookTemp=books.get(i);
             if(bookTemp.getId().equals(id)){
                 System.out.println("归还成功");
-            }else{
-                System.err.println("没有找到您要删除的图书编号！");
-                return true;
+                isprime = false;
+                bookTemp.setLeftNumber(bookTemp.getLeftNumber()+1);
             }
+        }
+        if(isprime==true){
+            System.err.println("没有找到您要归还的图书编号!");
         }
         return false;
     }
